@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Transcript History – VoiceScribe</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/animations.css"></head><body><div id="hdr"></div>
+<main><h1>Transcript History</h1><div class="row" style="justify-content:flex-start"><button id="clearAll" class="btn danger" hidden>Clear History</button></div>
+<div id="list" aria-live="polite"></div>
+<section id="details" class="card" hidden aria-labelledby="dtt"><h2 id="dtt">Transcript Details</h2><div class="kv">
+<div><small>Language</small><b id="dLang"></b></div><div><small>Duration</small><b id="dDur"></b></div>
+<div><small>Words</small><b id="dWords"></b></div><div><small>Created</small><b id="dDate"></b></div></div>
+<p><label for="dText" class="meta">Transcript</label></p><textarea id="dText"></textarea>
+<div class="row"><button id="dEdit" class="btn">Edit</button><button id="dCopy" class="btn">Copy</button><button id="dDown" class="btn">Download</button><button id="dDel" class="btn danger">Delete</button></div></section></main>
+<script src="js/main.js"></script><script src="js/history.js"></script></body></html>

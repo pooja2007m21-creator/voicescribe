@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VoiceScribe – ASR System</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"><link rel="stylesheet" href="css/animations.css"></head><body><div id="hdr"></div>
+<main>
+<section class="hero"><h1>Turn Your Voice Into Text</h1><p>Speak naturally and convert your voice into accurate, editable text with VoiceScribe.</p><button id="heroBtn" class="btn primary big">Start Recording</button></section>
+<section class="stats" aria-label="Dashboard summary">
+<div class="card"><b id="sSess">0</b><span>Total Sessions</span></div><div class="card"><b id="sWords">0</b><span>Total Words</span></div>
+<div class="card"><b id="sTr">0</b><span>Total Transcripts</span></div><div class="card"><b id="sLangTop">-</b><span>Most Used Language</span></div></section>
+<div id="unsupported" class="alert bad" role="alert" hidden>Speech recognition is not supported by this browser. Please use a compatible browser such as a supported Chromium-based browser.</div>
+<section class="card rec" id="recCard" aria-label="Speech recognition">
+<div class="mic" id="mic" aria-hidden="true">🎙️</div>
+<div class="wave" id="wave" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<p class="status" id="status" role="status" aria-live="polite">Ready to listen</p><div class="timer" id="timer" aria-label="Recording timer">00:00</div>
+<div id="msg" class="alert bad" role="alert" hidden></div>
+<div class="row"><label for="lang">Language:</label><select id="lang"></select></div>
+<p class="note">Language availability and recognition quality depend on your browser and its speech-recognition service. Most browsers send audio to an online service, and microphone permission is required.</p>
+<div class="row"><button id="start" class="btn primary big">Start Listening</button><button id="pause" class="btn" disabled>Pause</button><button id="stop" class="btn" disabled>Stop</button></div></section>
+<section class="card" aria-labelledby="lt"><h2 id="lt">Live Transcript</h2>
+<div><strong>Interim Text</strong><div id="interim" class="interim" aria-live="off"></div></div>
+<label for="final"><strong>Final Transcript</strong> <span class="note">(editable)</span></label>
+<textarea id="final" placeholder="Recognized speech will appear here. You can also type or edit."></textarea>
+<div class="row"><button id="save" class="btn primary">Save Transcript</button><button id="copy" class="btn">Copy</button><button id="download" class="btn">Download</button><button id="clear" class="btn danger">Clear</button></div></section>
+<section class="grid2">
+<div class="card"><h2>Text Statistics</h2><div class="kv">
+<div><small>Words</small><b id="aWords">0</b></div><div><small>Characters</small><b id="aChars">0</b></div>
+<div><small>Characters (no spaces)</small><b id="aNoSp">0</b></div><div><small>Sentences</small><b id="aSent">0</b></div>
+<div><small>Paragraphs</small><b id="aPara">0</b></div><div><small>Avg words / sentence</small><b id="aAvg">0</b></div>
+<div><small>Reading time</small><b id="aRead">00:00</b></div></div></div>
+<div><div class="card"><h2>Important Keywords</h2><div id="keywords"></div></div>
+<div class="card"><h2>Transcript Quality</h2><div class="kv">
+<div><small>Recognized words</small><b id="qWords">0</b></div><div><small>Manual corrections</small><b id="qEdits">0</b></div>
+<div><small>Recognition duration</small><b id="qDur">00:00</b></div><div><small>Empty / unclear results</small><b id="qEmpty">0</b></div></div>
+<p>Recognition Status: <strong id="qStatus">No data yet</strong></p><p class="note">Based on recognition events only. No accuracy percentage is claimed.</p></div></div></section>
+</main>
+<script src="js/main.js"></script><script src="js/analysis.js"></script><script src="js/recognition.js"></script></body></html>
